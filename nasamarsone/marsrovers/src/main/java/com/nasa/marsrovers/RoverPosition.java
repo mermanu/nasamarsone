@@ -4,17 +4,17 @@
  */
 package com.nasa.marsrovers;
 
-import com.nasa.marsapi.Direction;
-import com.nasa.marsapi.Position;
+import com.nasa.marsapi.positioning.Direction;
+import com.nasa.marsapi.positioning.Position;
 
 /**
  *
  * @author manuelmerida
  */
-public class RoverPosition extends Position{
+public class RoverPosition extends Position {
 
     private Direction direction;
-    
+
     /**
      *
      * @param xpos
@@ -27,47 +27,48 @@ public class RoverPosition extends Position{
     }
 
     /**
+     * Get the direction of the rover, North/South/East/West
      *
-     * @return
+     * @return Direction
      */
     public Direction getDirection() {
         return direction;
     }
 
     /**
+     * Set the direction of the rover
      *
      * @param direction
      */
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
-    
+
     /**
-     *
+     * Move one estep with North direction
      */
-    public void moveN(){
-        setYpos(getYpos()+1);
+    public void moveN() {
+        setYpos(getYpos() + 1);
     }
-    
+
     /**
-     *
+     * Move one estep with South direction
      */
-    public void moveS(){
-        setYpos(getYpos()-1);
+    public void moveS() {
+        setYpos(getYpos() - 1);
     }
-    
+
     /**
-     *
+     * Move one estep with West direction
      */
-    public void moveW(){
-        setXpos(getXpos()-1);
+    public void moveW() {
+        setXpos(getXpos() - 1);
     }
-    
+
     /**
-     *
+     * Move one estep with East direction
      */
-    public void moveE(){
-        setXpos(getXpos()+1);
+    public void moveE() {
+        setXpos(getXpos() + 1);
     }
-    
 }

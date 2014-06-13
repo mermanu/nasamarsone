@@ -4,10 +4,10 @@
  */
 package com.nasa.marsrovers;
 
-import com.nasa.marsapi.AreaToExplore;
-import com.nasa.marsapi.Direction;
-import com.nasa.marsapi.Position;
-import static com.nasa.marsrovers.MarsRover.RIGHT;
+import com.nasa.marsapi.marsareas.AreaToExplore;
+import com.nasa.marsapi.Constants;
+import com.nasa.marsapi.positioning.Direction;
+import com.nasa.marsapi.positioning.Position;
 import com.nasa.marsrovers.movements.MovePosition;
 import com.nasa.marsrovers.movements.RoverMovement;
 import com.nasa.marsrovers.movements.TurnLeft;
@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * RoverOne implementation
  *
  * @author manuelmerida
  */
@@ -44,13 +45,19 @@ public class RoverOne implements MarsRover {
         return output;
     }
 
+    public RoverPosition getRoverPosition() {
+        return roverPosition;
+    }
+
     public String executeOrders() throws Exception {
-        processInput();
-        executeItinerary();
+        this.processInput();
+        this.executeItinerary();
         return getOutput();
     }
 
     /**
+     * Get the input with the position and orders, parse the string to assign
+     * the rover position and the itinerary of the rover
      *
      * @throws Exception
      */
@@ -64,6 +71,7 @@ public class RoverOne implements MarsRover {
     }
 
     /**
+     * Set the rover position (X Y DIRECTION)
      *
      * @param position
      * @throws Exception
@@ -77,6 +85,7 @@ public class RoverOne implements MarsRover {
     }
 
     /**
+     * Set the itinerary of movements to be executed by the rover
      *
      * @param orders
      * @throws Exception
@@ -87,13 +96,13 @@ public class RoverOne implements MarsRover {
         for (int i = 1; i < orders.length(); i++) {
             char order = orders.charAt(i);
             switch (order) {
-                case MOVE:
+                case Constants.MOVE:
                     itinerary.add(new MovePosition());
                     break;
-                case LEFT:
+                case Constants.LEFT:
                     itinerary.add(new TurnLeft());
                     break;
-                case RIGHT:
+                case Constants.RIGHT:
                     itinerary.add(new TurnRight());
                     break;
                 default:
@@ -103,7 +112,7 @@ public class RoverOne implements MarsRover {
     }
 
     /*+
-     * 
+     * Get all the move orders to do and execute one by one
      */
     private void executeItinerary() throws Exception {
         for (int i = 0; i < itinerary.size(); i++) {
@@ -112,51 +121,23 @@ public class RoverOne implements MarsRover {
         }
     }
 
-    public void turnLeft() {
-        roverPosition.getDirection().toLeft();
-    }
-
-    public void turnRight() {
-        roverPosition.getDirection().toRight();
-    }
-
-    public void movePosition() {
-
-        switch (roverPosition.getDirection().facing) {
-            case Direction.NORTH:
-                roverPosition.moveN();
-                break;
-            case Direction.SOUTH:
-                roverPosition.moveS();
-                break;
-            case Direction.EAST:
-                roverPosition.moveE();
-                break;
-            case Direction.WEST:
-                roverPosition.moveW();
-                break;
-            default:
-                break;
-        }
-    }
-
     public boolean isPossibleItinerary(AreaToExplore area) {
         boolean isPossible = false;
         try {
             processInput();
-            
+
             for (int i = 0; i < itinerary.size(); i++) {
                 RoverMovement movement = itinerary.get(i);
                 movement.execute(this);
                 Position position = new Position(roverPosition.getXpos(), roverPosition.getYpos());
                 isPossible = area.isPossibleMovement(position);
-                if(!isPossible){
+                if (!isPossible) {
                     return isPossible;
-                }                
+                }
             }
         } catch (Exception ex) {
-            Logger.getLogger(RoverOne.class.getName()).log(Level.SEVERE, null, ex);           
-        }      
+            Logger.getLogger(RoverOne.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return isPossible;
     }
 }

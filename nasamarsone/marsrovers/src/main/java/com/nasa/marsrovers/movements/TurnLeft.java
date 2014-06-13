@@ -7,12 +7,13 @@ package com.nasa.marsrovers.movements;
 import com.nasa.marsrovers.MarsRover;
 
 /**
+ * Turn the rover to the left 90 degrees
  *
  * @author manuelmerida
  */
-public class TurnLeft implements RoverMovement{
+public class TurnLeft implements RoverMovement {
 
     public void execute(MarsRover rover) {
-        rover.turnLeft();
+        rover.getRoverPosition().getDirection().toLeft();
     }
 }
