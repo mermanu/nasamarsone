@@ -60,9 +60,6 @@ public class InputParser {
             }
 
         }
-        for (int i = 0; i < ordersToRovers.size(); i++) {
-            System.out.println("AnOrder: " + ordersToRovers.get(i));
-        }
         return ordersToRovers;
     }
     

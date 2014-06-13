@@ -67,7 +67,7 @@ public class BaseOne implements MarsBase {
         } catch (Exception e) {
             throw new BaseException();
         }
-        return output;
+        return output.trim();
     }
 
     /**

@@ -50,8 +50,10 @@ public class RoverOne implements MarsRover {
     }
 
     public String executeOrders() throws Exception {
+        System.out.println("RoverOne ON!!");
         this.processInput();
         this.executeItinerary();
+        System.out.println("RoverOne OFF!!");
         return getOutput();
     }
 
