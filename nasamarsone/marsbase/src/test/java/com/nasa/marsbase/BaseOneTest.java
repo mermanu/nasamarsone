@@ -37,4 +37,16 @@ public class BaseOneTest extends TestCase {
         assertEquals(expResult, result);
         System.out.println("Result:"+result);
     }
+    
+    /**
+     * Test of execute method, of class BaseOne. for interview
+     */
+    public void testExecuteForInterview() throws Exception {
+        System.out.println("execute");
+        BaseOne instance = new BaseOne("5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM");
+        String expResult = "1 3 N 5 1 E";
+        String result = instance.execute();
+        assertEquals(expResult, result);
+        System.out.println("Result: "+result);
+    }
 }
