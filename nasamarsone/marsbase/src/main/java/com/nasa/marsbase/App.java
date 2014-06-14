@@ -10,9 +10,15 @@ import com.nasa.marsbase.factory.BaseType;
 public class App 
 {
     public static void main( String[] args ) throws Exception
-    {
-        MarsBase mrbase = BaseFactory.getBase("5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM", BaseType.BASE_ONE);
-        String output = mrbase.execute();
-        System.out.println("MarsBase Output to NASA: " + output);
+    {   
+        if (args.length > 0) {
+            System.out.println("MarsBase ON!");
+            MarsBase mrbase = BaseFactory.getBase(args[0], BaseType.BASE_ONE);
+            String output = mrbase.execute();
+            System.out.println("MarsBase Output to NASA: " + output);
+        } else {
+            System.out.println("Oppss!!");
+            System.out.println("Put a input to be executed by the base.");
+        }
     }
 }
