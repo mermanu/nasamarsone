@@ -21,7 +21,7 @@
                 <configuration>
                     <foo>bar</foo>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <tagBase>/Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
+                    <tagBase>file:///Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
                 </configuration>
             </plugin>
         </plugins>
@@ -30,7 +30,6 @@
     <module>marsapi</module>
     <module>marsbase</module>
     <module>marsrovers</module>
-    <module>marscomunicator</module>
   </modules>
   
 </project>

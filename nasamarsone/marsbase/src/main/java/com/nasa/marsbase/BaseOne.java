@@ -6,6 +6,8 @@ package com.nasa.marsbase;
 
 import com.nasa.marsapi.marsareas.AreaToExplore;
 import com.nasa.marsapi.Constants;
+import com.nasa.marsapi.comunicator.ComunicatorOne;
+import com.nasa.marsapi.comunicator.MarsComunicator;
 import com.nasa.marsapi.marsareas.Plateau;
 import com.nasa.marsapi.positioning.Position;
 import com.nasa.marsbase.exceptions.BaseException;
@@ -47,6 +49,7 @@ public class BaseOne implements MarsBase {
      * 5) Return the rovers position
      */
     public String execute() throws BaseException {
+        MarsComunicator comunicator = new ComunicatorOne();
 
         try {
             String position = input.substring(0, 3);
@@ -57,14 +60,23 @@ public class BaseOne implements MarsBase {
 
             for (int i = 0; i < ordersToRovers.size(); i++) {
                 String order = (String) ordersToRovers.get(i);
-                
+
                 if (isPossibleItinerary(order)) {
-                    MarsRover mrover = RoverFactory.getRover(order, RoverType.ROVER_ONE);
-                    output += mrover.executeOrders();
+                    comunicator.messageToRover(order);
+                    String roverOutput = null;
+                    while (roverOutput == null || roverOutput.equals("")) {                        
+                        roverOutput = comunicator.messageFromRover();                        
+                        System.out.println("RoverOutput: "+roverOutput);
+                        Thread.sleep(2 * 1000);                        
+                    }
+                    //MarsRover mrover = RoverFactory.getRover(order, RoverType.ROVER_ONE);
+                    output += roverOutput;
                     output += " ";
+                    comunicator.writeOutput("", Constants.ROVER_OUTPUT);
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new BaseException();
         }
         return output.trim();

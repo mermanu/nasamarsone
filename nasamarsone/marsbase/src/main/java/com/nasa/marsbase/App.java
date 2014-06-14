@@ -1,24 +1,33 @@
 package com.nasa.marsbase;
 
-import com.nasa.marsbase.factory.BaseFactory;
-import com.nasa.marsbase.factory.BaseType;
+import com.nasa.marsapi.comunicator.Transmisor;
+import java.io.File;
 
 /**
- * Hello world!
+ * Hello BASE!
  *
  */
 public class App 
 {
-    public static void main( String[] args ) throws Exception
-    {   
+    public static boolean ACTIVE = true;
+    public static void main(String[] args) throws Exception {
+        String path = new File(".").getAbsolutePath();
+        path = path.substring(0, path.length() - 1);
+        //test in local
+        //String path = "/Users/manuelmerida/nasamarsone/nasamarsone/tags/"+Constants.BASE_INPUT;      
+
         if (args.length > 0) {
             System.out.println("MarsBase ON!");
-            MarsBase mrbase = BaseFactory.getBase(args[0], BaseType.BASE_ONE);
-            String output = mrbase.execute();
-            System.out.println("MarsBase Output to NASA: " + output);
+            System.out.println("Input path:" + path);   
+            Transmisor transmisor = new BaseTransmisor();
+            transmisor.start(path);
+            
         } else {
             System.out.println("Oppss!!");
             System.out.println("Put a input to be executed by the base.");
         }
+
     }
+    
+    
 }
