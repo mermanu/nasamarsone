@@ -11,6 +11,13 @@ OUTPUT: The output for each rover should be its final co-ordinates and heading. 
 <br/>Test Input: 5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM<br/>
 Expected Output: 1 3 N 5 1 E
 
+Used Patterns
+===========
+You will see some design patterns into the code, some of these are:<br/>
+Factory<br/>
+Startegy<br/>
+
+
 How to test
 ===========
 To deploy the NASA marsbase and rovers squad, you need to download the latest release binaries version and execute the NasaBash.sh file. Then with that bash is executed the MarsBase.jar process and The MarsRover.jar, each one started the Transmisor instance and will be able to receive new messages from nasa and between each other<br/>
