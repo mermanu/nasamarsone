@@ -15,7 +15,7 @@ Used Patterns
 ===========
 You will see some design patterns into the code, some of these are:<br/>
 Factory<br/>
-Startegy<br/>
+Strategy<br/>
 
 
 How to test
