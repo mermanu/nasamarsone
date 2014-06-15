@@ -10,42 +10,35 @@
   </formats>
   <fileSets>
     <fileSet>
-      <directory>${project.build.directory}/</directory>
+      <directory>../marsrovers/target/</directory>
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <include>*.jar</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>marsrovers/target/</directory>
+      <directory>../marsbase/target/</directory>
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <include>*.jar</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>marsbase/target/</directory>
+      <directory>../marsapi/target/</directory>
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <include>*.jar</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>marsapi/target/</directory>
-      <outputDirectory>/bin</outputDirectory>
-      <includes>
-        <include>*.jar</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <directory>assembly/comunications/</directory>
+      <directory>comunications/</directory>
       <outputDirectory>/bin/comunications</outputDirectory>
       <includes>
         <include>*.co</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>assembly/shellscripts/</directory>
+      <directory>shellscripts/</directory>
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <include>*.sh</include>
