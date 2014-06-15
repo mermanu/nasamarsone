@@ -33,32 +33,12 @@
                         <id>dist-assembly</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>release</goal>
+                            <goal>single</goal>
                         </goals>
                     </execution>
                 </executions>
-            </plugin>     
-            <plugin>
-                <groupId>de.jutzig</groupId>
-                <artifactId>github-release-plugin</artifactId>
-                <version>1.0.3</version>
-                <executions>
-                    <execution>
-                        <id>github-upload</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>release</goal>
-                        </goals>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <releaseName>v1.0.1</releaseName>
-                            <tag>v1.0.1</tag>
-                            <artifact>${project.build.directory}/${project.groupId}.${project.artifactId}-${project.version}.jar</artifact>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>       
-        </plugins>        
+            </plugin>                   
+        </plugins>       
     </build>
     <modules>
         <module>marsapi</module>
