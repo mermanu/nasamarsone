@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
@@ -51,6 +51,14 @@
                 <configuration>
                     <descriptor>deploy/dep.xml</descriptor>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>                     
         </plugins>        
     </build>
