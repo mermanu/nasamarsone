@@ -7,6 +7,7 @@ package com.nasa.marsapi.positioning;
 import com.nasa.marsapi.Constants;
 
 /**
+ * Direction handler implementation
  *
  * @author manuelmerida
  */
@@ -18,6 +19,9 @@ public class Direction {
         this.facing = facing;
     }
 
+    /**
+     * Turn the rover to his actual left side
+     */
     public void toLeft() {
         switch (facing) {
             case Constants.NORTH:
@@ -35,6 +39,9 @@ public class Direction {
         }
     }
 
+    /**
+     * Turn the rover to his actual right side
+     */
     public void toRight() {
         switch (facing) {
             case Constants.NORTH:

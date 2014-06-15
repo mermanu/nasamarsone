@@ -42,7 +42,7 @@ public interface MarsComunicator {
     public String messageFromNasa(String path) throws Exception;
     
     /**
-     *
+     * Write the message content into the defined receiver
      * @param output
      * @param path
      * @throws Exception

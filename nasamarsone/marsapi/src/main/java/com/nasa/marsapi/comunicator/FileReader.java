@@ -11,25 +11,33 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
+ * File reader/writer implementation
  *
  * @author manuelmerida
  */
 public class FileReader {
-    
+
+    /**
+     * Get the content of a defined file
+     *
+     * @param filePath
+     * @return
+     * @throws Exception
+     */
     public static String getFileContent(String filePath) throws Exception {
         BufferedReader br = null;
         FileInputStream fis = null;
         String content = null;
-        String tmp = null;        
+        String tmp = null;
         try {
             fis = new FileInputStream(filePath);
             br = new BufferedReader(new InputStreamReader(fis));
             int i = 0;
             while ((tmp = br.readLine()) != null) {
-                if(tmp != null){
+                if (tmp != null) {
                     content = tmp;
                 }
-            }            
+            }
         } catch (Exception e) {
             throw e;
         } finally {
@@ -37,7 +45,7 @@ public class FileReader {
                 if (br != null) {
                     br.close();
                 }
-                if(fis!=null){
+                if (fis != null) {
                     fis.close();
                 }
             } catch (IOException ex) {
@@ -46,11 +54,17 @@ public class FileReader {
         }
         return content;
     }
-    
-    public static void setFileContent(String message, String filePath) throws Exception{
+
+    /**
+     * Set the content of a defined file
+     *
+     * @param message
+     * @param filePath
+     * @throws Exception
+     */
+    public static void setFileContent(String message, String filePath) throws Exception {
         PrintWriter writer = new PrintWriter(filePath);
-        writer.println(message);        
+        writer.println(message);
         writer.close();
     }
-    
 }

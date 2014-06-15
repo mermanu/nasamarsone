@@ -17,10 +17,10 @@ public class App
         //String path = "/Users/manuelmerida/nasamarsone/nasamarsone/tags/"+Constants.BASE_INPUT;      
 
         if (args.length > 0) {
-            System.out.println("MarsRover ON!");
-            System.out.println("Input path:" + path);   
+            System.out.println("MarsRover ON!");               
             Transmisor transmisor = new RoverTransmisor();
             transmisor.start(path);
+            System.out.println("Rover transmisor started");
             
         } else {
             System.out.println("Oppss!!");

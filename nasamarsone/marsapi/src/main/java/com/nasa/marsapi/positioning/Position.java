@@ -5,16 +5,18 @@
 package com.nasa.marsapi.positioning;
 
 /**
+ * Represent the position of an object in the AreaToExplore object
  *
  * @author manuelmerida
  */
 public class Position {
+
     private Integer xpos;
     private Integer ypos;
 
     public Position() {
     }
-    
+
     /**
      *
      * @param xpos
@@ -23,7 +25,7 @@ public class Position {
     public Position(Integer xpos, Integer ypos) {
         this.xpos = xpos;
         this.ypos = ypos;
-    }   
+    }
 
     public Integer getXpos() {
         return xpos;
@@ -39,5 +41,5 @@ public class Position {
 
     public void setYpos(Integer ypos) {
         this.ypos = ypos;
-    }    
+    }
 }

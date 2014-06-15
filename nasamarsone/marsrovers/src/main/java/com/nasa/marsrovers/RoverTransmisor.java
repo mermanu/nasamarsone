@@ -13,14 +13,15 @@ import com.nasa.marsrovers.factory.RoverFactory;
 import com.nasa.marsrovers.factory.RoverType;
 
 /**
+ * RoverTransmnisor is waiting for entry messages continuously
  *
  * @author manuelmerida
  */
-public class RoverTransmisor implements Transmisor{
+public class RoverTransmisor implements Transmisor {
 
-    public void start(String path) throws Exception{
+    public void start(String path) throws Exception {
         MarsComunicator comunicator = new ComunicatorOne();
-        while (ACTIVE) {            
+        while (ACTIVE) {
             String input = comunicator.messageFromBase(path);
             if (input != null && !input.equals("")) {
                 System.out.println("Input to RoverOne: " + input);
@@ -33,5 +34,4 @@ public class RoverTransmisor implements Transmisor{
             Thread.sleep(4 * 1000);
         }
     }
-    
 }
