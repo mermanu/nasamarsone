@@ -11,6 +11,15 @@ OUTPUT: The output for each rover should be its final co-ordinates and heading. 
 <br/>Test Input: 5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM<br/>
 Expected Output: 1 3 N 5 1 E
 
+Implemented design
+===========
+The project is integrated by 3 modules, two of them represents the real entities other is only an api with some common functionality.<br/>
+MarsApi: it's the module with common functionality<br/>
+MarsBase: represents a base in mars that receive the messages from NASA and send the orders to the rovers squad.<br/>
+MarsRovers: represents the Rover software that is executed by the rovers.<br/><br/>
+The way that this entities have communication is through the Communicator interface and with the Transmisor interface like an anthena to receive the entry messages.<br/>
+Assembly folder, is only for development and release versions purpose.
+
 Used Patterns
 ===========
 You will see some design patterns into the code, some of these are:<br/>
