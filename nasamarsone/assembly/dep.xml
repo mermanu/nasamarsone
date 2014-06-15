@@ -38,14 +38,14 @@
       </includes>
     </fileSet>
     <fileSet>
-      <directory>deploy/comunications/</directory>
+      <directory>assembly/comunications/</directory>
       <outputDirectory>/bin/comunications</outputDirectory>
       <includes>
         <include>*.co</include>
       </includes>
     </fileSet>
     <fileSet>
-      <directory>shellscripts/</directory>
+      <directory>assembly/shellscripts/</directory>
       <outputDirectory>/bin</outputDirectory>
       <includes>
         <include>*.sh</include>

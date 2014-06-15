@@ -22,6 +22,9 @@
             <url>http://mermanu.github.com/maven-repository/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+    <properties>
+        <last.version>1.9-SNAPSHOT</last.version>
+    </properties>
     <build>
         <plugins>            
             <plugin>
@@ -50,7 +53,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <descriptor>deploy/dep.xml</descriptor>
+                    <descriptor>assembly/dep.xml</descriptor>
                 </configuration>
                 <executions>
                     <execution>
@@ -74,10 +77,10 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <file>shellscripts/NasaBash.sh</file>
+                    <file>assembly/shellscripts/NasaBash.sh</file>
                     <replacements>
                         <replacement>
-                            <token>PROJECTVERSION</token>
+                            <token>${last.version}</token>
                             <value>${project.version}</value>
                         </replacement>         
                     </replacements>
