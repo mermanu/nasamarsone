@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
@@ -46,6 +46,18 @@
                 </configuration>
             </plugin>                      
         </plugins>
+        <resources>
+            <resource>
+                <directory>binaries</directory>
+                <includes>
+                    <include>marsapi/target/*.jar</include>
+                    <include>marsbase/target/*.jar</include>
+                    <include>marsrovers/target/*.jar</include>
+                    <include>shellscripts/*.sh</include>
+                    <include>deploy/comunications/*.co</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
     <modules>
         <module>marsapi</module>

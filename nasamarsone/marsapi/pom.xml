@@ -4,11 +4,11 @@
   <parent>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.6-SNAPSHOT</version>
   </parent>
   <groupId>com.nasa</groupId>
   <artifactId>marsapi</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>1.6-SNAPSHOT</version>
   <name>marsapi</name>
   <url>http://maven.apache.org</url>
   <properties>
