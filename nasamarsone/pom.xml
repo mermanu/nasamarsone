@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.16-SNAPSHOT</version>
+    <version>1.17-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
@@ -21,13 +21,28 @@
                 <configuration>
                     <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
                 </configuration>
-            </plugin>                            
+            </plugin>  
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptor>assembly/dep.xml</descriptor>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>dist-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>                                      
         </plugins>       
     </build>
     <modules>
         <module>marsapi</module>
         <module>marsbase</module>
         <module>marsrovers</module>
-        <module>assembly</module>
     </modules>  
 </project>
