@@ -23,7 +23,8 @@ Assembly folder, is only for development and release versions purpose.
 Used Patterns
 ===========
 You will see some design patterns into the code, some of these are:<br/>
-Factory, Strategy, Bridge, Adapter, Facade among others.
+Factory, Strategy, Bridge, Adapter, Facade among others.<br/><br/>
+Singleton (to be implemented in next version with more functionalities) ;)
 
 How to test
 ===========
