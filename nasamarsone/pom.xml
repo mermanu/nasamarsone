@@ -12,6 +12,9 @@
         <developerConnection>scm:git:git@github.com:mermanu/nasamarsone.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+    <properties>
+        <github.global.server>github</github.global.server>
+    </properties>
     <distributionManagement>
         <repository>
             <id>releases</id>
@@ -35,7 +38,7 @@
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy assembly:single</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <tagNameFormat>nasamarsone-@{project.version}</tagNameFormat>
                     <tagBase>file:///Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
                 </configuration>
             </plugin>
