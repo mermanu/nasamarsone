@@ -38,7 +38,7 @@
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy assembly:single</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <tagNameFormat>nasamarsone-@{project.version}</tagNameFormat>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
                     <tagBase>file:///Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
                 </configuration>
             </plugin>
