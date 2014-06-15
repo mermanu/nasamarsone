@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.11-SNAPSHOT</version>
+    <version>1.12-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
@@ -12,18 +12,8 @@
         <developerConnection>scm:git:git@github.com:mermanu/nasamarsone.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <url>http://mermanu.github.com/maven-repository/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://mermanu.github.com/maven-repository/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
     <properties>
-        <last.version>1.10-SNAPSHOT</last.version>
+        <last.version>1.11-SNAPSHOT</last.version>
     </properties>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
@@ -43,6 +33,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>dist-assembly</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
@@ -71,7 +62,37 @@
                         </replacement>         
                     </replacements>
                 </configuration>
-            </plugin>                    
+            </plugin> 
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-distribution</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>target/${pom.artifactId}-${pom.version}.bin.tar.gz</file>
+                                    <type>tar.gz</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/${pom.artifactId}-${pom.version}.bin.tar.bz2</file>
+                                    <type>tar.bz2</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/${pom.artifactId}-${pom.version}.bin.zip</file>
+                                    <type>zip</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>                   
         </plugins>        
     </build>
     <modules>
