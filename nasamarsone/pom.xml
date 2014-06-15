@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.8-SNAPSHOT</version>
+    <version>1.9-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
@@ -36,6 +36,7 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <tagBase>file:///Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
+                    <goals>deploy assembly:assembly</goals>
                 </configuration>
             </plugin>
             <plugin>
@@ -59,7 +60,29 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>                     
+            </plugin> 
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>                   
+                    </execution>
+                </executions>
+                <configuration>
+                    <file>shellscripts/NasaBash.sh</file>
+                    <replacements>
+                        <replacement>
+                            <token>PROJECTVERSION</token>
+                            <value>${project.version}</value>
+                        </replacement>         
+                    </replacements>
+                </configuration>
+            </plugin>                    
         </plugins>        
     </build>
     <modules>
