@@ -14,7 +14,7 @@ Expected Output: 1 3 N 5 1 E
 Used Patterns
 ===========
 You will see some design patterns into the code, some of these are:<br/>
-Factory, Strategy, Bridge, Adapter among others.
+Factory, Strategy, Bridge, Adapter, Facade among others.
 
 How to test
 ===========
