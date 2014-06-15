@@ -44,7 +44,14 @@
                 <configuration>
                     <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
                 </configuration>
-            </plugin>                      
+            </plugin> 
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptor>deploy/dep.xml</descriptor>
+                </configuration>
+            </plugin>                     
         </plugins>
         <resources>
             <resource>
