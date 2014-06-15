@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.nasa</groupId>
     <artifactId>nasamarsone</artifactId>
-    <version>1.13</version>
+    <version>1.13-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>nasamarsone</name>
     <scm>
         <connection>scm:git:git@github.com:mermanu/nasamarsone.git</connection>
         <url>scm:git:git@github.com:mermanu/nasamarsone.git</url>
         <developerConnection>scm:git:git@github.com:mermanu/nasamarsone.git</developerConnection>
-        <tag>nasamarsone-1.13</tag>
+        <tag>HEAD</tag>
     </scm>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
@@ -33,12 +33,12 @@
                         <id>dist-assembly</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>single</goal>
+                            <goal>release</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>     
-            <plugin>
+            <!--<plugin>
                 <groupId>de.jutzig</groupId>
                 <artifactId>github-release-plugin</artifactId>
                 <version>1.0.3</version>
@@ -57,7 +57,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>      
+            </plugin>-->        
         </plugins>        
     </build>
     <modules>
