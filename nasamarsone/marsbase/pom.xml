@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.nasa</groupId>
             <artifactId>marsapi</artifactId>
-            <version>1.3-SNAPSHOT</version>
+            <version>1.4-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
         <dependency>
