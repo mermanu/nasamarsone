@@ -33,7 +33,6 @@
                     -->
                     <foo>bar</foo>
                     <releaseProfiles>release</releaseProfiles>
-                    <goals>deploy assembly:single</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <tagBase>file:///Users/manuelmerida/nasamarsone/nasamarsone/tags</tagBase>
