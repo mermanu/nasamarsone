@@ -8,7 +8,9 @@ import com.nasa.marsapi.positioning.Direction;
 import com.nasa.marsapi.positioning.Position;
 
 /**
- *
+ * Represents the position (x, y) in the AreaToExplore and the 
+ * direction of rover
+ * 
  * @author manuelmerida
  */
 public class RoverPosition extends Position {
@@ -16,7 +18,8 @@ public class RoverPosition extends Position {
     private Direction direction;
 
     /**
-     *
+     * Initialize the rover position and direction in the AreaToExplore 
+     * 
      * @param xpos
      * @param ypos
      * @param direction
