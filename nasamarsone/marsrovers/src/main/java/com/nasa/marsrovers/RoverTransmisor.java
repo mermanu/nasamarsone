@@ -20,9 +20,10 @@ import com.nasa.marsrovers.factory.RoverType;
 public class RoverTransmisor implements Transmisor {
 
     /**
-     * Starts the communicator and begin to look for any string input from the base when this find any input
-     * then executed the orders contained into this and returns the output
-     * 
+     * Starts the communicator and begin to look for any string input from the
+     * base when this find any input then executed the orders contained into
+     * this and returns the output
+     *
      */
     public void start(String path) throws Exception {
         MarsComunicator comunicator = new ComunicatorOne();

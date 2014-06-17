@@ -7,9 +7,9 @@ package com.nasa.marsrovers;
 import com.nasa.marsapi.marsareas.AreaToExplore;
 
 /**
- * Mars rovers interface with elemental methods to be 
- * implemented by specifics models of rovers
- * 
+ * Mars rovers interface with elemental methods to be implemented by specifics
+ * models of rovers
+ *
  * @author manuelmerida
  */
 public interface MarsRover {

@@ -52,7 +52,7 @@ public class RoverOne implements MarsRover {
     public String executeOrders() throws Exception {
         System.out.println("RoverOne executing orders...");
         this.processInput();
-        this.executeItinerary();        
+        this.executeItinerary();
         return getOutput();
     }
 
