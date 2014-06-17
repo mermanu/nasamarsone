@@ -31,7 +31,7 @@ public class BaseOne implements MarsBase {
     private InputParser inputParser = new InputParser();
 
     /**
-     *
+     * Initialize the BaseOne
      * @param input
      */
     public BaseOne(String input) {

@@ -12,14 +12,23 @@ import com.nasa.marsbase.factory.BaseFactory;
 import com.nasa.marsbase.factory.BaseType;
 
 /**
+ * Transmisor implementation of the base
  *
  * @author manuelmerida
  */
-public class BaseTransmisor implements Transmisor{
+public class BaseTransmisor implements Transmisor {
 
-    MarsComunicator comunicator = new ComunicatorOne();
-    public void start(String path) throws Exception{        
-        while (ACTIVE) {            
+    private MarsComunicator comunicator = new ComunicatorOne();
+
+    /**
+     * Starts the comunicator and begin to look for some input, if receive one
+     * this is processed and the message for each rover is send
+     *
+     * @param path
+     * @throws Exception
+     */
+    public void start(String path) throws Exception {
+        while (ACTIVE) {
             String input = comunicator.messageFromNasa(path);
             if (input != null && !input.equals("")) {
                 System.out.println("Input to BaseOne: " + input);

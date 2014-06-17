@@ -18,15 +18,20 @@ import com.nasa.marsrovers.factory.RoverType;
  * @author manuelmerida
  */
 public class RoverTransmisor implements Transmisor {
-
+    
+    private MarsComunicator comunicator = new ComunicatorOne();
+    
     /**
      * Starts the communicator and begin to look for any string input from the
      * base when this find any input then executed the orders contained into
      * this and returns the output
-     *
+     * 
+     * @param path
+     * @throws Exception 
      */
     public void start(String path) throws Exception {
-        MarsComunicator comunicator = new ComunicatorOne();
+        
+        
         while (ACTIVE) {
             String input = comunicator.messageFromBase(path);
             if (input != null && !input.equals("")) {
@@ -37,7 +42,7 @@ public class RoverTransmisor implements Transmisor {
                 System.out.println("RoverOne Output to BASE: " + output);
                 comunicator.messageToRover("");
             }
-            Thread.sleep(4 * 1000);
+            Thread.sleep(2 * 1000);
         }
     }
 }
