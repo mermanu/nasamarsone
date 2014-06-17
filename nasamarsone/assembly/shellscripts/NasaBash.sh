@@ -1,5 +1,6 @@
 #! /bin/bash
 echo "NASA transmisor beginning to run..."
+echo "max rovers: ${max.rovers}"
 
 echo "MarsBase beginning to run..."
 exec "$JAVA_HOME"/bin/java -jar marsbase-${project.version}.jar 'start' &
