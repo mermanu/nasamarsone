@@ -21,6 +21,12 @@
     </distributionManagement>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources> 
         <plugins>      
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -43,11 +49,12 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5</version>
             </plugin>                                       
-        </plugins>       
+        </plugins>              
     </build>
     <modules>
         <module>marsapi</module>
         <module>marsbase</module>
         <module>marsrovers</module>
+        <module>assembly</module>
     </modules>  
 </project>
