@@ -9,7 +9,7 @@ import java.io.File;
  */
 public class App 
 {
-    public static boolean ACTIVE = true;
+    public static final boolean ACTIVE = true;
     public static void main(String[] args) throws Exception {
         String path = new File(".").getAbsolutePath();
         path = path.substring(0, path.length() - 1);

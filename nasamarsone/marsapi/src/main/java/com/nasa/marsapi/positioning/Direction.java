@@ -36,6 +36,8 @@ public class Direction {
             case Constants.EAST:
                 facing = Constants.NORTH;
                 break;
+            default:
+                break;    
         }
     }
 
@@ -56,6 +58,8 @@ public class Direction {
             case Constants.EAST:
                 facing = Constants.SOUTH;
                 break;
+            default:
+                break;      
         }
     }
 }
