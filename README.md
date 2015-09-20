@@ -33,4 +33,4 @@ For send the message to the MarsBase, write the input into the "bin/comunication
 Example message into BASE_INPUT.co: 
 <pre>input: 5 5 1 2 N LMLMLMLMM 3 3 E MMRMMRMRRM</pre>
 <pre>output: 1 3 N 5 1 E</pre>
-
+test
